@@ -1,5 +1,5 @@
 const dino = document.querySelector('.dino');
-
+const background = document.querySelector('.background');
 let isJumping = false;
 
 function handlekeyUp(event){
@@ -36,4 +36,14 @@ function jump(){
     }, 20);
 }
 
+function createCactus() {
+    const cactus = document.createElement('div');
+    let cactusPosition = 1000;
+
+    cactus.classList.add('cactus');
+    cactus.style.left = 1000 + 'px';
+    background.appendChild(cactus);
+}
+
+createCactus();
 document.addEventListener('keyup', handlekeyUp);
