@@ -25,23 +25,23 @@ function jump(){
                     isJumping = false;
                 }else{
                     position -= 20;
-                    dino.computedStyleMap.bottom = position + 'px';
+                    dino.style.bottom = position + 'px';
                 }
             }, 20);
         }else{
             // subindo
             position += 20;
-            dino.computedStyleMap.bottom = position + 'px'
+            dino.style.bottom = position + 'px'
         }
     }, 20);
 }
 
 function createCactus() {
     const cactus = document.createElement('div');
-    let cactusPosition = 1000;
+    let cactusPosition = 700;
 
     cactus.classList.add('cactus');
-    cactus.style.left = 1000 + 'px';
+    cactus.style.left = 700 + 'px';
     background.appendChild(cactus);
 }
 
