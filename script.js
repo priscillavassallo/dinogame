@@ -1,5 +1,7 @@
 const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
+const viewport = document.querySelector('.viewport');
+const gameView = document.querySelector('.gameView');
 let position = 0;
 let isJumping = false;
 
@@ -37,11 +39,11 @@ function jump(){
 
 function createCactus() {
     const cactus = document.createElement('div');
-    let cactusPosition = 1000;
+    let cactusPosition = gameView.clientWidth;
     let randomTime = Math.random() * 5500 + 500; 
 
     cactus.classList.add('cactus');
-    cactus.style.left = 1000 + 'px';
+    cactus.style.left = gameView.clientWidth + 'px';
     background.appendChild(cactus);
 
     let leftInterval = setInterval(() => {
@@ -51,7 +53,7 @@ function createCactus() {
         } else if (cactusPosition > 0 && cactusPosition < 60 && position < 60){
             // game over
             clearInterval(leftInterval);
-            document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+            gameView.innerHTML = '<h2 class="game-over">Fim de jogo</h2>';
         } else {
             cactusPosition -= 10;
             cactus.style.left = cactusPosition + 'px';
